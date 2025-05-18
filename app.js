@@ -11,8 +11,8 @@ app.get('/', async (req, res) => {
 });
 
 
-//mongoose.connect(process.env.SERVER);
-mongoose.connect('SERVER=mongodb+srv://borisA:this86@cluster0.ooupxxs.mongodb.net/tasks?retryWrites=true&w=majority');
+mongoose.connect(process.env.SERVER);
+
 
 
 const TaskSchema = new mongoose.Schema({
