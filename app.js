@@ -6,11 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // Get hola
-app.get('/', async (req, res) => {
-  res.send('hola');
+app.get ("/", (req,res)=>{
+  const htmlResponse =`<html><head></head><body><h1>Hola Mundo1</h1></body></html>`
+  res.send (htmlResponse);
 });
-
-
 mongoose.connect(process.env.SERVER);
 
 
@@ -54,7 +53,5 @@ app.delete('/tasks/:id', async (req, res) => {
 
 
 
-
-app.listen(5000, () => console.log('Server running on http://localhost:5000'));
 
 module.exports = app;
