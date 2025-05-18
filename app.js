@@ -10,8 +10,6 @@ app.get ("/", (req,res)=>{
   const htmlResponse =`<html><head></head><body><h1>Hola Mundo1</h1></body></html>`
   res.send (htmlResponse);
 });
-mongoose.connect(process.env.SERVER);
-
 
 
 const TaskSchema = new mongoose.Schema({
@@ -51,6 +49,13 @@ app.delete('/tasks/:id', async (req, res) => {
   res.json({ success: true });
 });
 
+
+mongoose.connect(process.env.SERVER).then(() => {    
+  app.listen(5000);
+})
+.catch(err => {
+  console.log(err);
+});
 
 
 
