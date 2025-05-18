@@ -25,6 +25,13 @@ app.get('/tasks', async (req, res) => {
   res.json(tasks);
 });
 
+
+// Get hola
+app.get('/', async (req, res) => {
+    res.send('hola');
+  });
+  
+
 // Create task
 app.post('/tasks', async (req, res) => {
   const task = new Task(req.body);
