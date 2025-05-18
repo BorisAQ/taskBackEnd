@@ -50,7 +50,12 @@ app.delete('/tasks/:id', async (req, res) => {
 });
 
 
-mongoose.connect(process.env.SERVER).then(() => {    
+mongoose.connect(process.env.SERVER,
+
+  { useNewUrlParser: true ,
+    useUnifiedTopology: true }  
+
+).then(() => {    
   app.listen(5000);
 })
 .catch(err => {
