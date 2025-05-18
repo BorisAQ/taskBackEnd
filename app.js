@@ -9,7 +9,7 @@ app.use(express.json());
 app.get('/', async (req, res) => {
   res.send('hola');
 });
-/*
+
 
 mongoose.connect(process.env.SERVER);
 
@@ -51,7 +51,7 @@ app.delete('/tasks/:id', async (req, res) => {
   res.json({ success: true });
 });
 
-*/
+
 
 
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
