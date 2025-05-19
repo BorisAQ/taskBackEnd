@@ -6,11 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // Get hola
-app.get ("/", (req,res)=>{
-  const htmlResponse =`<html><head></head><body><h1>Hola Mundo1</h1></body></html>`
-  res.send (htmlResponse);
-});
-
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 const TaskSchema = new mongoose.Schema({
   name: String,
@@ -50,18 +46,12 @@ app.delete('/tasks/:id', async (req, res) => {
 });
 
 
-mongoose.connect(process.env.SERVER,
-
-  { useNewUrlParser: true ,
-    useUnifiedTopology: true }  
-
+mongoose.connect(process.env.SERVER
 ).then(() => {    
-  app.listen(5000);
+  app.listen(3002, ()=>console.log ('Server runnin on port 3002'));
 })
 .catch(err => {
   console.log(err);
 });
-
-
 
 module.exports = app;
